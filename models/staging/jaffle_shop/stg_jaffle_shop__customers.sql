@@ -3,4 +3,4 @@ select
         FIRST_NAME AS first_name,
         LAST_NAME AS last_name
 
-    from raw.jaffle_shop.customers
+    from {{ source('jaffle_shop', 'customers') }}

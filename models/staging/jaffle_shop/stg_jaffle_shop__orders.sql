@@ -1,7 +1,8 @@
 select
-        ID AS order_id,
-        USER_ID AS customer_id,
-        ORDER_DATE AS order_date,
-        STATUS AS status
+        id AS order_id,
+        user_id AS customer_id,
+        order_date,
+        status,
+        _etl_loaded_at
 
-    from raw.jaffle_shop.orders
+    from {{source('jaffle_shop', 'orders')}}
