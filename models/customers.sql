@@ -1,9 +1,9 @@
 with customers as (
 
     select
-        customer_id,
-        first_name,
-        last_name
+        ID AS customer_id,
+        FIRST_NAME AS first_name,
+        LAST_NAME AS last_name
 
     from raw.jaffle_shop.customers
 
@@ -12,10 +12,10 @@ with customers as (
 orders as (
 
     select
-        id as order_id,
-        user_id as customer_id,
-        order_date,
-        status
+        ID AS order_id,
+        USER_ID AS customer_id,
+        ORDER_DATE AS order_date,
+        STATUS AS status
 
     from raw.jaffle_shop.orders
 
