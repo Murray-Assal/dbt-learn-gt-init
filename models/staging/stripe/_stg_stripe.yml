@@ -1,0 +1,19 @@
+models:
+  - name: stg_stripe__payment
+    description: staged payment data
+    columns:
+      - name: id
+        description: the primary key
+        data_tests:
+          - unique
+          - not_null
+      - name: amount
+        description: amount paid in dollars
+      - name: status
+        description: "{{ doc('payment_status') }}"
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['success', 'fail']
+      - name: created_at
+        description: timestamp when the payment was created
